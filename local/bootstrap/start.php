@@ -41,7 +41,7 @@ $env = $app->detectEnvironment(function() {
 $env = $app->detectEnvironment(array(
 
 	'local' => array(
-        'MY_PC_NAME',
+        'PC-NAME',
     ),
 
 	'production' => array('*'),
