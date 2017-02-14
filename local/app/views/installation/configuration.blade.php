@@ -165,9 +165,9 @@
                 <br>
                 <hr>
   
-                <p class="panel-padding-h">Make sure you install Piwik for landing page analytics, <a href="https://nowsquare.com/pulse-platform/documentation/v1/installation/install-piwik" target="_blank">https://nowsquare.com/pulse-platform/documentation/v1/installation/install-piwik</a>.</p>
+                <p class="panel-padding-h">Make sure you install Piwik for landing page analytics, <a href="https://nowsquare.com/pulse-platform/documentation/v2/installation/install-piwik" target="_blank">https://nowsquare.com/pulse-platform/documentation/v2/installation/install-piwik</a>.</p>
 
-                <p class="panel-padding-h">For more information on configuration options, visit <a href="https://nowsquare.com/pulse-platform/documentation/v1/configuration" target="_blank">https://nowsquare.com/pulse-platform/documentation/v1/configuration</a>.</p>
+                <p class="panel-padding-h">For more information on configuration options, visit <a href="https://nowsquare.com/pulse-platform/documentation/v2/configuration" target="_blank">Pulse configuration</a>. Also, check configuration options for <a href="https://nowsquare.com/landing-page-platform/documentation/v2/configuration" target="_blank">Landing Page Platform configuration</a> and <a href="https://nowsquare.com/mobile-platform/documentation/v2/configuration" target="_blank">Mobile Platform configuration</a>.</p>
 
                 <hr>
                 <div style="margin:20px">
