@@ -107,7 +107,7 @@ class TranslationController extends \BaseController {
             }
         }
 
-        return \Excel::create('MadeWithPepper-Translation-' . date('Y-m-d'), function($excel) use($excel_export){
+        return \Excel::create('PulsePlatform-Translation-' . date('Y-m-d'), function($excel) use($excel_export){
             $excel->sheet('Translations', function($sheet) use($excel_export) {
                 $sheet->fromArray($excel_export, null, 'A1', false, true);
             });
@@ -122,7 +122,7 @@ class TranslationController extends \BaseController {
     {
         if ($locale == NULL) die();
 
-        $import_file = public_path() . '/translations/NL-lists.xlsx';
+        $import_file = public_path() . '/translations/translation.xlsx';
         $translation_dir_root = public_path() . '/translations';
 
         // Clean dirs
