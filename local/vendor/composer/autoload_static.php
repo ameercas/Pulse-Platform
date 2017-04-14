@@ -229,9 +229,9 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         ),
         'League\\OAuth2\\Client\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/oauth2-instagram/src',
-            1 => __DIR__ . '/..' . '/league/oauth2-client/src',
-            2 => __DIR__ . '/..' . '/league/oauth2-facebook/src',
+            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
+            1 => __DIR__ . '/..' . '/league/oauth2-facebook/src',
+            2 => __DIR__ . '/..' . '/league/oauth2-instagram/src',
         ),
         'League\\OAuth1\\' => 
         array (
@@ -330,10 +330,6 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-cors/src',
         ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/aweber/aweber/aweber_api',
     );
 
     public static $prefixesPsr0 = array (
@@ -557,6 +553,21 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
     );
 
     public static $classMap = array (
+        'AWeberAPI' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber.php',
+        'AWeberAPIBase' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber.php',
+        'AWeberAPIException' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberCollection' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber_collection.php',
+        'AWeberEntry' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber_entry.php',
+        'AWeberEntryDataArray' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber_entry_data_array.php',
+        'AWeberException' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberMethodNotImplemented' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberOAuthAdapter' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/oauth_adapter.php',
+        'AWeberOAuthDataMissing' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberOAuthException' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberResourceNotImplemented' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberResponse' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber_response.php',
+        'AWeberResponseError' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/exceptions.php',
+        'AWeberServiceProvider' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/aweber.php',
         'AppTypeTableSeeder' => __DIR__ . '/../..' . '/app/database/seeds/AppTypeTableSeeder.php',
         'AssignedRoleTableSeeder' => __DIR__ . '/../..' . '/app/database/seeds/AssignedRoleTableSeeder.php',
         'BaseController' => __DIR__ . '/../..' . '/app/controllers/BaseController.php',
@@ -566,31 +577,34 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         'CallbackParameterToReference' => __DIR__ . '/..' . '/electrolinux/phpquery/phpQuery/phpQuery/Callback.php',
         'CallbackReturnReference' => __DIR__ . '/..' . '/electrolinux/phpquery/phpQuery/phpQuery/Callback.php',
         'CallbackReturnValue' => __DIR__ . '/..' . '/electrolinux/phpquery/phpQuery/phpQuery/Callback.php',
-        'ConfideSetupUsersTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191110_confide_setup_users_table.php',
-        'CreateAppPagesTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191160_create_app_pages_table.php',
-        'CreateAppStatsTable' => __DIR__ . '/../..' . '/app/database/migrations/2015_08_21_062252_create_app_stats_table.php',
-        'CreateAppUserDataTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191195_create_app_user_data_table.php',
-        'CreateAppWidgetDataTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191190_create_app_widget_data_table.php',
-        'CreateAppsTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191150_create_apps_table.php',
-        'CreateBeaconsTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_09_09_114236_create_beacons_table.php',
-        'CreateCampaignsTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191130_create_campaigns_table.php',
-        'CreateGeofencesTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_09_09_114237_create_geofences_table.php',
-        'CreateInteractionsTable' => __DIR__ . '/../..' . '/app/database/migrations/2015_11_23_114236_create_interactions_table.php',
-        'CreateKeysTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_10_01_184634_create_keys_table.php',
-        'CreateLeadIndustriesTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191125_create_lead_industries_table.php',
-        'CreateLeadsTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_10_01_184614_create_leads_table.php',
-        'CreateLogTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_08_04_195400_create_log_table.php',
-        'CreateMessagesTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191220_create_messages_table.php',
-        'CreateOauthTable' => __DIR__ . '/../..' . '/app/database/migrations/2015_04_02_122036_create_oauth_table.php',
-        'CreateOrdersTable' => __DIR__ . '/../..' . '/app/database/migrations/2015_08_21_062359_create_orders_table.php',
-        'CreatePublicUsersTable' => __DIR__ . '/../..' . '/app/database/migrations/2015_09_08_142109_create_public_users_table.php',
-        'CreateSettingsTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191210_create_settings_table.php',
-        'CreateSitePagesTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191170_create_site_pages_table.php',
-        'CreateSitesTable' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191140_create_sites_table.php',
+        'ConfideSetupUsersTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191110_confide_setup_users_table.php',
+        'CreateAppPagesTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191170_create_app_pages_table.php',
+        'CreateAppStatsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191290_create_app_stats_table.php',
+        'CreateAppUserDataTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191200_create_app_user_data_table.php',
+        'CreateAppWidgetDataTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191190_create_app_widget_data_table.php',
+        'CreateAppsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191160_create_apps_table.php',
+        'CreateBeaconsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191240_create_beacons_table.php',
+        'CreateCampaignsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191140_create_campaigns_table.php',
+        'CreateGeofencesTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191250_create_geofences_table.php',
+        'CreateInteractionsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191320_create_interactions_table.php',
+        'CreateKeysTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191270_create_keys_table.php',
+        'CreateLeadIndustriesTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191130_create_lead_industries_table.php',
+        'CreateLeadsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191260_create_leads_table.php',
+        'CreateLogTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191230_create_log_table.php',
+        'CreateMessagesTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191220_create_messages_table.php',
+        'CreateOauthTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191280_create_oauth_table.php',
+        'CreateOrdersTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191300_create_orders_table.php',
+        'CreatePublicUsersTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191310_create_public_users_table.php',
+        'CreateSettingsTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191210_create_settings_table.php',
+        'CreateSitePagesTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191180_create_site_pages_table.php',
+        'CreateSitesTable' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191150_create_sites_table.php',
+        'CurlInterface' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/curl_object.php',
+        'CurlObject' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/curl_object.php',
+        'CurlResponse' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/curl_response.php',
         'DOMDocumentWrapper' => __DIR__ . '/..' . '/electrolinux/phpquery/phpQuery/phpQuery/DOMDocumentWrapper.php',
         'DOMEvent' => __DIR__ . '/..' . '/electrolinux/phpquery/phpQuery/phpQuery/DOMEvent.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/app/database/seeds/DatabaseSeeder.php',
-        'EntrustSetupTables' => __DIR__ . '/../..' . '/app/database/migrations/2014_07_16_191120_entrust_setup_tables.php',
+        'EntrustSetupTables' => __DIR__ . '/../..' . '/app/database/migrations/2017_01_01_191120_entrust_setup_tables.php',
         'ICallbackNamed' => __DIR__ . '/..' . '/electrolinux/phpquery/phpQuery/phpQuery/Callback.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
         'LeadIndustryTableSeeder' => __DIR__ . '/../..' . '/app/database/seeds/LeadIndustryTableSeeder.php',
@@ -622,6 +636,9 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         'Maatwebsite\\Excel\\Writers\\CellWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/CellWriter.php',
         'Maatwebsite\\Excel\\Writers\\LaravelExcelWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/LaravelExcelWriter.php',
         'Normalizer' => __DIR__ . '/..' . '/patchwork/utf8/src/Normalizer.php',
+        'OAuthApplication' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/oauth_application.php',
+        'OAuthServiceProvider' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/oauth_application.php',
+        'OAuthUser' => __DIR__ . '/..' . '/aweber/aweber/aweber_api/oauth_application.php',
         'Permission' => __DIR__ . '/../..' . '/app/models/Permission.php',
         'PermissionTableSeeder' => __DIR__ . '/../..' . '/app/database/seeds/PermissionTableSeeder.php',
         'PlanTableSeeder' => __DIR__ . '/../..' . '/app/database/seeds/PlanTableSeeder.php',
@@ -651,6 +668,7 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         'elFinder' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinder.class.php',
         'elFinderConnector' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderConnector.class.php',
         'elFinderLibGdBmp' => __DIR__ . '/..' . '/studio-42/elfinder/php/libs/GdBmp.php',
+        'elFinderPlugin' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderPlugin.php',
         'elFinderPluginAutoResize' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/AutoResize/plugin.php',
         'elFinderPluginAutoRotate' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/AutoRotate/plugin.php',
         'elFinderPluginNormalizer' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/Normalizer/plugin.php',
@@ -661,6 +679,7 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         'elFinderVolumeBox' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeBox.class.php',
         'elFinderVolumeDriver' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeDriver.class.php',
         'elFinderVolumeDropbox' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeDropbox.class.php',
+        'elFinderVolumeDropbox2' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeDropbox2.class.php',
         'elFinderVolumeFTP' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeFTP.class.php',
         'elFinderVolumeFTPIIS' => __DIR__ . '/..' . '/barryvdh/elfinder-builds/php/elFinderVolumeFTPIIS.class.php',
         'elFinderVolumeFlysystem' => __DIR__ . '/..' . '/barryvdh/elfinder-flysystem-driver/elFinderVolumeFlysystem.php',
@@ -697,7 +716,6 @@ class ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit26cd48079ac5d05d6b6a0c249f1c91a8::$classMap;
 

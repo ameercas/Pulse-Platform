@@ -4,7 +4,7 @@
   "keywords": ["framework", "laravel"],
   "license": "MIT",
   "require": {
-    "laravel/framework": "4.2.20",
+    "laravel/framework": "4.2.22",
     "barryvdh/laravel-vendor-cleanup": "v1.2.4",
     "fitztrev/laravel-html-minify": "1.0.*",
     "anahkiasen/former": "3.5.*",
@@ -14,7 +14,7 @@
     "yzalis/identicon": "1.1.*",
     "codesleeve/laravel-stapler": "1.0.*",
     "guzzlehttp/guzzle": "6.0.*",
-    "piwik/device-detector": "3.6.*",
+    "piwik/device-detector": "3.7.*",
     "intervention/image": "2.1.*",
     "barryvdh/laravel-elfinder": "0.2.*",
     "true/punycode": "1.1.*",

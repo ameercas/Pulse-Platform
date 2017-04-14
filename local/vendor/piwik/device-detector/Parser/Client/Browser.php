@@ -45,7 +45,9 @@ class Browser extends ClientParserAbstract
         'BS' => 'Baidu Spark',
         'BE' => 'Beonex',
         'BJ' => 'Bunjalloo',
+        'BL' => 'B-Line',
         'BR' => 'Brave',
+        'BK' => 'BriskBard',
         'BX' => 'BrowseX',
         'CA' => 'Camino',
         'CC' => 'Coc Coc',
@@ -61,8 +63,10 @@ class Browser extends ClientParserAbstract
         'CP' => 'ChromePlus',
         'CR' => 'Chromium',
         'CS' => 'Cheshire',
+        'DB' => 'dbrowser',
         'DE' => 'Deepnet Explorer',
         'DF' => 'Dolphin',
+        'DO' => 'Dorado',
         'DI' => 'Dillo',
         'EL' => 'Elinks',
         'EB' => 'Element Browser',
@@ -82,6 +86,7 @@ class Browser extends ClientParserAbstract
         'IB' => 'IBrowse',
         'IC' => 'iCab',
         'ID' => 'IceDragon',
+        'IV' => 'Isivioo',
         'IW' => 'Iceweasel',
         'IE' => 'Internet Explorer',
         'IM' => 'IE Mobile',
@@ -132,12 +137,14 @@ class Browser extends ClientParserAbstract
         'PR' => 'Palm Pre',
         'PU' => 'Puffin',
         'PW' => 'Palm WebPro',
+        'PA' => 'Palmscape',
         'PX' => 'Phoenix',
         'PO' => 'Polaris',
         'PS' => 'Microsoft Edge',
         'QQ' => 'QQ Browser',
         'RK' => 'Rekonq',
         'RM' => 'RockMelt',
+        'SB' => 'Samsung Browser',
         'SA' => 'Sailfish Browser',
         'SC' => 'SEMC-Browser',
         'SE' => 'Sogou Explorer',
@@ -150,8 +157,10 @@ class Browser extends ClientParserAbstract
         'SN' => 'Snowshoe',
         'SR' => 'Sunrise',
         'SP' => 'SuperBird',
+        'ST' => 'Streamy',
         'SX' => 'Swiftfox',
         'TZ' => 'Tizen Browser',
+        'TS' => 'TweakStyle',
         'UC' => 'UC Browser',
         'VI' => 'Vivaldi',
         'VB' => 'Vision Mobile Browser',
@@ -172,15 +181,15 @@ class Browser extends ClientParserAbstract
         'BlackBerry Browser' => array('BB'),
         'Baidu'              => array('BD', 'BS'),
         'Amiga'              => array('AV', 'AW'),
-        'Chrome'             => array('CH', 'BR', 'CC', 'CD', 'CM', 'CI', 'CF', 'CN', 'CR', 'CP', 'IR', 'RM', 'AO', 'VI'),
+        'Chrome'             => array('CH', 'BR', 'CC', 'CD', 'CM', 'CI', 'CF', 'CN', 'CR', 'CP', 'IR', 'RM', 'AO', 'TS', 'VI'),
         'Firefox'            => array('FF', 'FE', 'SX', 'FB', 'PX', 'MB'),
         'Internet Explorer'  => array('IE', 'IM', 'PS'),
         'Konqueror'          => array('KO'),
         'NetFront'           => array('NF'),
-        'Nokia Browser'      => array('NB', 'NO', 'NV'),
+        'Nokia Browser'      => array('NB', 'NO', 'NV', 'DO'),
         'Opera'              => array('OP', 'OM', 'OI', 'ON'),
         'Safari'             => array('SF', 'MF'),
-        'Sailfish Browser'   => array('SA')
+        'Sailfish Browser'   => array('SA'),
     );
 
     /**
@@ -189,7 +198,7 @@ class Browser extends ClientParserAbstract
      * @var array
      */
     protected static $mobileOnlyBrowsers = array(
-        '36', 'PU', 'SK', 'OI'
+        '36', 'PU', 'SK', 'OI', 'DB', 'ST', 'BL', 'IV'
     );
 
     /**
@@ -245,7 +254,7 @@ class Browser extends ClientParserAbstract
             }
         }
 
-        if (!$matches) {
+        if (empty($matches)) {
             return null;
         }
 
@@ -255,12 +264,14 @@ class Browser extends ClientParserAbstract
             if (strtolower($name) == strtolower($browserName)) {
                 $version = (string) $this->buildVersion($regex['version'], $matches);
                 $engine = $this->buildEngine(isset($regex['engine']) ? $regex['engine'] : array(), $version);
+                $engineVersion = $this->buildEngineVersion($engine);
                 return array(
-                    'type'       => 'browser',
-                    'name'       => $browserName,
-                    'short_name' => $browserShort,
-                    'version'    => $version,
-                    'engine'     => $engine
+                    'type'           => 'browser',
+                    'name'           => $browserName,
+                    'short_name'     => $browserShort,
+                    'version'        => $version,
+                    'engine'         => $engine,
+                    'engine_version' => $engineVersion,
                 );
             }
         }
@@ -287,10 +298,19 @@ class Browser extends ClientParserAbstract
         // try to detect the engine using the regexes
         if (empty($engine)) {
             $engineParser = new Engine();
+            $engineParser->setYamlParser($this->getYamlParser());
+            $engineParser->setCache($this->getCache());
             $engineParser->setUserAgent($this->userAgent);
             $engine = $engineParser->parse();
         }
 
         return $engine;
+    }
+
+    protected function buildEngineVersion($engine)
+    {
+        $engineVersionParser = new Engine\Version($this->userAgent, $engine);
+
+        return $engineVersionParser->parse();
     }
 }
