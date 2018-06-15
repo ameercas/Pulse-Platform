@@ -2,4 +2,4 @@
 
 Enterprise mobile marketing.
 
-https://nowsquare.com/pulse-platform/documentation/v2
+https://www2.nowsquare.com/pulse-platform/documentation/v2
